@@ -8,9 +8,11 @@
 int height_helper(const binary_tree_t *tree);
 size_t binary_tree_height(const binary_tree_t *tree)
 {
+	size_t result;
+
 	if (tree == NULL)
 		return (0);
-	size_t result = height_helper(tree);
+	result = height_helper(tree);
 
 	return (result);
 }
@@ -21,14 +23,16 @@ size_t binary_tree_height(const binary_tree_t *tree)
 */
 int height_helper(const binary_tree_t *tree)
 {
+	int left, right;
+
 	if (tree == NULL)
 	{
 		return (-1);
 	}
 	else
 	{
-		int left = height_helper(tree->left);
-		int right = height_helper(tree->right);
+		left = height_helper(tree->left);
+		right = height_helper(tree->right);
 
 		return (fmax(left, right) + 1);
 	}
