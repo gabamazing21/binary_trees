@@ -39,6 +39,8 @@ const binary_tree_t *first, const binary_tree_t *second)
 		return (root);
 	if (root == NULL)
 		return (NULL);
+	if (root == first || root == second)
+		return (root);
 	left_lca = findLCA(root->left, first, second);
 	right_lca = findLCA(root->right, first, second);
 	if (left_lca && right_lca)
