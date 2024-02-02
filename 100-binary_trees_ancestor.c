@@ -15,6 +15,8 @@ const binary_tree_t *second)
 
 	if (first == NULL && second == NULL)
 		return (NULL);
+	if (first == NULL || second == NULL)
+		return (NULL);
 	node = (binary_tree_t *)(first != NULL ? first : second);
 	while (node != NULL && node->parent != NULL)
 	{
