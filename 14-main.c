@@ -10,7 +10,7 @@
 int main(void)
 {
     binary_tree_t *root;
-    int balance, height;
+    int balance;
 
     root = binary_tree_node(NULL, 98);
     root->left = binary_tree_node(root, 12);
@@ -26,10 +26,10 @@ int main(void)
     balance = binary_tree_balance(root);
     printf("Balance of %d: %+d\n", root->n, balance);
     balance = binary_tree_balance(root->right);
-	height = binary_tree_height(root->right->right);
+	/*height = binary_tree_height(root->right->right);
 	height = binary_tree_height(root->right->left);
 	printf("Height of right (128)%d: %d\n", root->right->right->n, height);
-	printf("Height of left (128)%d: %d\n", root->right->left->n, height);
+	printf("Height of left (128)%d: %d\n", root->right->left->n, height);*/
     printf("Balance of %d: %+d\n", root->right->n, balance);
     balance = binary_tree_balance(root->left->left->right);
     printf("Balance of %d: %+d\n", root->left->left->right->n, balance);
